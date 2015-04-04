@@ -11,6 +11,7 @@ Route::group(['prefix' => $prefix], function()
         '/auth' => 'Chilloutalready\SimpleAdmin\Http\Controllers\Auth\AdminAuthController',
 //    $prefix . '/password' => 'Chilloutalready\SimpleAdmin\Http\Controllers\Auth\PasswordController',
     ]);
+    Route::get( '/', 'Chilloutalready\SimpleAdmin\Http\Controllers\BaseAdminController@dashboard');
     Route::get( '{modelName}', 'Chilloutalready\SimpleAdmin\Http\Controllers\BaseAdminController@index');
     Route::get('{modelName}/create', 'Chilloutalready\SimpleAdmin\Http\Controllers\BaseAdminController@create');
     Route::get('{modelName}/edit/{id}', 'Chilloutalready\SimpleAdmin\Http\Controllers\BaseAdminController@edit');
