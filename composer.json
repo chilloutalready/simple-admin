@@ -1,0 +1,27 @@
+{
+  "name": "chilloutalready/simple-admin",
+  "version": "0.0.3",
+  "type": "library",
+  "description": "Simple admin interface",
+  "keywords": [],
+  "homepage": "https://github.com/chilloutalready/simple-admin",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Chilloutalready",
+      "email": "nick@chilloutalready.com",
+      "homepage": "http://www.chilloutalready.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.5.0",
+    "illuminate/html": "5.*",
+    "composer/installers": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chilloutalready\\SimpleAdmin\\": "src/"
+    }
+  }
+}
+
