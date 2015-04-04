@@ -11,19 +11,7 @@ use Illuminate\Routing\Controller;
 
 class AdminAuthController extends Controller {
 
-    protected $redirectTo = '/admin/dashboard';
-    protected $loginPath = '/admin/auth/login';
-    protected $redirectAfterLogout = '/admin/auth/login';
-    /*
-    |--------------------------------------------------------------------------
-    | Registration & Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles the registration of new users, as well as the
-    | authentication of existing users. By default, this controller uses
-    | a simple trait to add these behaviors. Why don't you explore it?
-    |
-    */
+    
     use DispatchesCommands, ValidatesRequests, AuthenticatesAndRegistersAdmins;
 
     /**
@@ -37,6 +25,11 @@ class AdminAuthController extends Controller {
     {
         $this->auth = $auth;
         $this->registrar = $registrar;
+        $prefix = SApackageConfig('prefix');
+
+        $this->redirectTo = '/' . $prefix . '/dashboard';
+        $this->loginPath  = '/' . $prefix . '/auth/login';
+        $this->redirectAfterLogout = '/' . $prefix . '/auth/login';
 
         $this->middleware('guest', ['except' => 'getLogout']);
     }
