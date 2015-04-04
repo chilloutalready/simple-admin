@@ -22,6 +22,7 @@ return [
     'columns' => [
         'administrators' => [
             'name',
+            'username',
             'email'
         ]
     ],
@@ -44,6 +45,10 @@ return [
         'administrators' => [
             'username' => [
                 'label' => 'Username',
+                'type' => 'text'
+            ],
+            'name' => [
+                'label' => 'Name',
                 'type' => 'text'
             ],
             'email' => [
@@ -84,10 +89,12 @@ return [
                 'username' => 'required',
                 'password' => 'required|min:6|confirmed',
             ],
-            'edit' => [
+            'update' => [
+                'password' => 'min:6|confirmed',
                 'email' => 'required|email'
             ],
             'create' => [
+                'username' => 'required|unique:administrators',
                 'email' => 'required|email|unique:administrators'
             ]
         ]
